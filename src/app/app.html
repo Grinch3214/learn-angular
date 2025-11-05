@@ -1,6 +1,6 @@
-<app-header title="props like vue.js"></app-header>
+<app-header [title]="title"></app-header>
 
-<h1>My notes</h1>
+<h1 (mouseover)="showConsole()" (click)="showConsole()">My notes</h1>
 
 <ul>
 	<li *ngFor="let note of notes()">

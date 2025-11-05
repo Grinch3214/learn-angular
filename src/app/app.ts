@@ -16,6 +16,12 @@ export class App {
     console.log('work click');
   }
 
+  title = 'Test title (file app.ts)';
+
+  showConsole() {
+    console.log('Click h1');
+  }
+
   protected readonly notes = signal<Note[]>([
     {
       id: 1,
