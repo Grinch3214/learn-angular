@@ -1,3 +1,5 @@
-<footer>
+<footer [ngClass]="{ 'footer-class': username }">
+	<p *ngIf="username" [ngStyle]="{'color': username  ? 'blue': 'black'}">Hello user: {{ username }}</p>
+	<input type=" text" [(ngModel)]="username">
 	<button (click)="onSubscribe()">Click</button>
 </footer>
