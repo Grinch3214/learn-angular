@@ -10,4 +10,13 @@
 	</li>
 </ul>
 
+<h2>Add notes</h2>
+
+<div>
+	<input type="text" [(ngModel)]="newNote().title" placeholder="Add title">
+	<textarea [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
+
+	<button (click)="addNote()">Add note</button>
+</div>
+
 <app-footer (subscribeClicked)="handleSubscribe()"></app-footer>

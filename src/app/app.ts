@@ -4,10 +4,11 @@ import { Note } from './models/note.model';
 import { CommonModule } from '@angular/common';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, Header, Footer],
+  imports: [CommonModule, FormsModule, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -36,4 +37,28 @@ export class App {
       createdAt: new Date(),
     },
   ]);
+
+  protected newNote = signal<Partial<Note>>({
+    title: '',
+    content: '',
+  });
+
+  protected addNote() {
+    const noteData = this.newNote();
+
+    if (!noteData.title || !noteData.content) return;
+
+    const newNote: Note = {
+      id: Date.now(),
+      title: noteData.title,
+      content: noteData.content,
+      createdAt: new Date(),
+    };
+
+    this.notes.update((notes) => [...notes, newNote]);
+    this.newNote.set({
+      title: '',
+      content: '',
+    });
+  }
 }
