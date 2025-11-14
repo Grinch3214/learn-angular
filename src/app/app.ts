@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { FormsModule } from '@angular/forms';
+import { NoteService } from './services/note';
 
 @Component({
   selector: 'app-root',
@@ -13,30 +14,21 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.scss',
 })
 export class App {
+  constructor(private noteService: NoteService) {}
+
   handleSubscribe() {
     console.log('work click');
   }
 
   title = 'Test title (file app.ts)';
 
+  protected notes() {
+    return this.noteService.getNotes()();
+  }
+
   showConsole() {
     console.log('Click h1');
   }
-
-  protected readonly notes = signal<Note[]>([
-    {
-      id: 1,
-      title: 'First note',
-      content: 'Hi, this is first note',
-      createdAt: new Date(),
-    },
-    {
-      id: 2,
-      title: 'Second note',
-      content: 'Hi, this is second note',
-      createdAt: new Date(),
-    },
-  ]);
 
   protected newNote = signal<Partial<Note>>({
     title: '',
@@ -48,14 +40,8 @@ export class App {
 
     if (!noteData.title || !noteData.content) return;
 
-    const newNote: Note = {
-      id: Date.now(),
-      title: noteData.title,
-      content: noteData.content,
-      createdAt: new Date(),
-    };
+    this.noteService.addNote(noteData.title, noteData.content);
 
-    this.notes.update((notes) => [...notes, newNote]);
     this.newNote.set({
       title: '',
       content: '',
