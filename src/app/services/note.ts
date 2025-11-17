@@ -18,6 +18,12 @@ export class NoteService {
       content: 'Hi, this is second note',
       createdAt: new Date(),
     },
+    {
+      id: 3,
+      title: 'Third note',
+      content: 'Hi, this is Third note',
+      createdAt: new Date(),
+    },
   ]);
 
   getNotes() {
