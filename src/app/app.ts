@@ -9,7 +9,7 @@ import { NoteService } from './services/note';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, FormsModule, Header, Footer],
+  imports: [CommonModule, RouterOutlet, FormsModule, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
