@@ -1,6 +1,8 @@
 <app-header [title]="title"></app-header>
 
-<h1 (click)="showConsole()">My notes</h1>
+<router-outlet></router-outlet>
+
+<!-- <h1 (click)="showConsole()">My notes</h1>
 
 <ul>
 	<li *ngFor="let note of notes()">
@@ -17,6 +19,6 @@
 	<textarea [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
 
 	<button (click)="addNote()">Add note</button>
-</div>
+</div> -->
 
 <app-footer (subscribeClicked)="handleSubscribe()"></app-footer>
