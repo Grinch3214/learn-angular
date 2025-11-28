@@ -2,23 +2,4 @@
 
 <router-outlet></router-outlet>
 
-<!-- <h1 (click)="showConsole()">My notes</h1>
-
-<ul>
-	<li *ngFor="let note of notes()">
-		<span>{{ note.title }}</span>
-		{{ note.content }}
-		<span> {{ note.createdAt | date:'dd.MM.yyyy HH:mm' }} </span>
-	</li>
-</ul>
-
-<h2>Add notes</h2>
-
-<div>
-	<input type="text" [(ngModel)]="newNote().title" placeholder="Add title">
-	<textarea [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
-
-	<button (click)="addNote()">Add note</button>
-</div> -->
-
 <app-footer (subscribeClicked)="handleSubscribe()"></app-footer>
