@@ -1,5 +1,9 @@
-<app-header [title]="title"></app-header>
+<div class="wrapper">
+	<app-header [title]="title"></app-header>
 
-<router-outlet></router-outlet>
+	<main class="main">
+		<router-outlet></router-outlet>
+	</main>
 
-<app-footer (subscribeClicked)="handleSubscribe()"></app-footer>
+	<app-footer (subscribeClicked)="handleSubscribe()"></app-footer>
+</div>
