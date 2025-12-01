@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 100dvh;
+}
+
+.main {
+  flex: 1;
+}
