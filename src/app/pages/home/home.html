@@ -1,18 +1,22 @@
-<h1 (click)="showConsole()">My notes</h1>
+<section class="home">
+	<div class="container home__container">
+		<h1 class="home__title" (click)="showConsole()">My notes</h1>
 
-<ul>
-	<li *ngFor="let note of notes()">
-		<span>{{ note.title }}</span>
-		{{ note.content }}
-		<span> {{ note.createdAt | date:'dd.MM.yyyy HH:mm' }} </span>
-	</li>
-</ul>
+		<ul class="home__list">
+			<li *ngFor="let note of notes()" class="home__item">
+				<span class="home__item-title">{{ note.title }}</span>
+				{{ note.content }}
+				<span class="home__item-at"> {{ note.createdAt | date:'dd.MM.yyyy HH:mm' }} </span>
+			</li>
+		</ul>
 
-<h2>Add notes</h2>
+		<h2 class="home__subtitle">Add notes</h2>
 
-<div>
-	<input type="text" [(ngModel)]="newNote().title" placeholder="Add title">
-	<textarea [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
+		<div class="home__form">
+			<input class="home__form-input" type="text" [(ngModel)]="newNote().title" placeholder="Add title">
+			<textarea class="home__form-textarea" [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
 
-	<button (click)="addNote()">Add note</button>
-</div>
+			<button class="home__form-btn" (click)="addNote()">Add note</button>
+		</div>
+	</div>
+</section>
