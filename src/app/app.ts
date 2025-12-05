@@ -16,5 +16,5 @@ export class App {
     console.log('work click');
   }
 
-  title = 'Test title (file app.ts)';
+  title = 'Angular App';
 }

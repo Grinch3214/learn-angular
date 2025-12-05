@@ -1,3 +1,5 @@
+@use '../../scss/mixins' as mix;
+
 .header {
   padding: 20px 0;
   background: #000;
@@ -11,8 +13,8 @@
   }
 
   &__logo {
-    color: inherit;
-    text-decoration: none;
+    @include mix.base-link(rgb(175, 175, 241), rgb(193, 218, 240), rgb(193, 193, 247));
+
     font-size: 26px;
     text-transform: uppercase;
   }
@@ -27,15 +29,6 @@
   }
 
   &__link {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      color: rgb(205, 218, 230);
-    }
-
-    &:active {
-      color: rgb(193, 218, 240);
-    }
+    @include mix.base-link(rgb(205, 218, 230), rgb(193, 218, 240));
   }
 }

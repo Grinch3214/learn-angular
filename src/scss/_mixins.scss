@@ -1,0 +1,17 @@
+:root {
+  --transition-time: 200ms;
+}
+
+@mixin base-link($hover: blue, $active: violet, $color: inherit) {
+  color: $color;
+  text-decoration: none;
+  transition: color var(--transition-time) linear;
+
+  &:hover {
+    color: $hover;
+  }
+
+  &:active {
+    color: $active;
+  }
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 interface NavItem {
+  id: number | string;
   name: string;
   url: string;
 }
@@ -17,7 +18,7 @@ export class Header {
   @Input() title!: string;
 
   list: NavItem[] = [
-    { name: 'Home', url: '/' },
-    { name: 'About', url: '/about' },
+    { id: 1, name: 'Home', url: '/' },
+    { id: 2, name: 'About', url: '/about' },
   ];
 }
