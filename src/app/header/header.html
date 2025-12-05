@@ -1,5 +1,13 @@
 <header class="header">
 	<div class="container header__container">
-		{{ title }}
+		<a class="header__logo" [routerLink]="list[0].url">{{ title }}</a>
+
+		<ul class="header__list">
+			@for (item of list; track item.id) {
+			<li class="header__item">
+				<a class="header__link" [routerLink]="item.url">{{ item.name }}</a>
+			</li>
+			}
+		</ul>
 	</div>
 </header>
