@@ -13,8 +13,9 @@
 		<h2 class="home__subtitle">Add notes</h2>
 
 		<div class="home__form">
-			<input class="home__form-input" type="text" [(ngModel)]="newNote().title" placeholder="Add title">
-			<textarea class="home__form-textarea" [(ngModel)]="newNote().content" placeholder="Add content"></textarea>
+			<input class="home__form-input" name="title" type="text" [(ngModel)]="newNote().title" placeholder="Add title">
+			<textarea class="home__form-textarea" name="desc" [(ngModel)]="newNote().content"
+				placeholder="Add content"></textarea>
 
 			<button class="home__form-btn" (click)="addNote()">Add note</button>
 		</div>
