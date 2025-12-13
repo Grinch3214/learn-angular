@@ -1,5 +1,8 @@
 :root {
   --transition-time: 200ms;
+  --main-color: #222;
+  --second-color: #32004e;
+  --white-color: #fff;
 }
 
 @mixin base-link($hover: blue, $active: violet, $color: inherit) {
@@ -13,5 +16,16 @@
 
   &:active {
     color: $active;
+  }
+}
+
+@mixin title($color: var(--second-color)) {
+  color: $color;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
   }
 }
