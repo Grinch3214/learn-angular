@@ -2,6 +2,13 @@
   display: flex;
   flex-flow: column;
   min-height: 100dvh;
+  position: relative;
+}
+
+.header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .main {
