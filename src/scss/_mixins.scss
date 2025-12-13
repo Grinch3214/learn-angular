@@ -1,5 +1,10 @@
 :root {
   --transition-time: 200ms;
+  --main-color: rgb(34, 34, 34);
+  --second-color: #32004e;
+  --white-color: #fff;
+  --rounded-md: 8px;
+  --accent-color: rgb(193, 193, 247);
 }
 
 @mixin base-link($hover: blue, $active: violet, $color: inherit) {
@@ -13,5 +18,58 @@
 
   &:active {
     color: $active;
+  }
+}
+
+@mixin title($color: var(--second-color)) {
+  color: $color;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  @media screen and (min-width: 767px) {
+    font-size: 40px;
+  }
+}
+
+@mixin button {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 14px 26px;
+  color: var(--white-color);
+  background: var(--main-color);
+  border-radius: var(--rounded-md);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s linear;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+@mixin field($height: auto) {
+  resize: none;
+  font-size: 14px;
+  padding: 10px;
+  min-height: $height;
+  border-radius: var(--rounded-md);
+  box-shadow: 0 0 0 1px var(--main-color);
+  color: var(--second-color);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--second-color);
+  }
+
+  @media screen and (min-width: 767px) {
+    font-size: 16px;
+    padding: 14px;
   }
 }

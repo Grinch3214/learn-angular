@@ -1,0 +1,18 @@
+@use '../../../scss/mixins' as mix;
+
+.about {
+  padding: 60px 0;
+
+  &__container {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__title {
+    @include mix.title;
+  }
+
+  &__desc {
+    font-size: 20px;
+  }
+}
