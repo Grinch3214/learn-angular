@@ -1,7 +1,11 @@
 <footer class="footer" [ngClass]="{ 'footer-class': username }">
 	<div class="container footer__container">
-		<p *ngIf="username" [ngStyle]="{'color': username  ? 'blue': 'black'}">Hello user: {{ username }}</p>
-		<input type=" text" [(ngModel)]="username">
-		<button (click)="onSubscribe(); username = ''">Click</button>
+		@if (username) {
+		<p [ngStyle]="{'color': username  ? 'blue': 'black'}">Hello user: {{ username }}</p>
+		}
+		<div class="footer__form">
+			<input type=" text" [(ngModel)]="username" maxlength="40">
+			<button (click)="onSubscribe(); username = ''">Click</button>
+		</div>
 	</div>
 </footer>

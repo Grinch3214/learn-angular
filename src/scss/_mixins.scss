@@ -4,6 +4,7 @@
   --second-color: #32004e;
   --white-color: #fff;
   --rounded-md: 8px;
+  --accent-color: rgb(193, 193, 247);
 }
 
 @mixin base-link($hover: blue, $active: violet, $color: inherit) {
