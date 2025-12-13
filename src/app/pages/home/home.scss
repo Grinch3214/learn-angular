@@ -1,9 +1,11 @@
 @use '../../../scss/mixins' as mix;
 
 .home {
-  padding: 50px 0;
+  padding: 60px 0;
 
   &__container {
+    display: grid;
+    gap: 20px;
   }
 
   &__title {
@@ -14,26 +16,62 @@
   }
 
   &__item {
+    display: grid;
+    gap: 6px;
+    padding: 10px 0;
+    transition: background 0.2s linear;
+    text-align: justify;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    & + & {
+      border-top: 1px solid var(--second-color);
+    }
   }
 
   &__item-title {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
   }
 
   &__item-at {
+    font-size: 14px;
+    font-weight: 700;
+    justify-self: end;
   }
 
   &__subtitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__inner {
   }
 
   &__form {
+    display: grid;
+    gap: 8px;
   }
 
   &__form-input {
+    @include mix.field;
   }
 
   &__form-textarea {
+    @include mix.field(150px);
   }
 
   &__form-btn {
+    justify-self: end;
+    max-width: 200px;
+    width: 100%;
+
+    @include mix.button;
   }
 }
