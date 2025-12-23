@@ -21,7 +21,8 @@ export class NoteService {
     {
       id: 3,
       title: 'Third note',
-      content: 'Hi, this is Third note',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque magni vitae velit praesentium, maxime inventore, similique, quasi adipisci voluptate molestiae. Quia nam exercitationem reprehenderit fugiat explicabo pariatur ullam. Ad?',
       createdAt: new Date(),
     },
   ]);
