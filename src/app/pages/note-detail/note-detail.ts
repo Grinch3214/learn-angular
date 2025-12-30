@@ -1,18 +1,24 @@
 import { Component } from '@angular/core';
+import { NoteService } from '../../services/note';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-note-detail',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './note-detail.html',
   styleUrl: './note-detail.scss',
 })
 export class NoteDetail {
-  noteId: string | null = null;
+  noteId!: number;
+  note: any;
 
-  constructor(private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    this.noteId = this.route.snapshot.paramMap.get('id');
+  constructor(private route: ActivatedRoute, private noteService: NoteService) {
+    this.route.params.subscribe((params) => {
+      this.noteId = +params['id'];
+      this.note = this.noteService
+        .getNotes()()
+        .find((n) => n.id === this.noteId);
+    });
   }
 }
