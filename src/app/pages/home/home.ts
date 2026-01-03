@@ -3,19 +3,23 @@ import { NoteService } from '../../services/note';
 import { Note } from '../../models/note.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
-  constructor(private noteService: NoteService) {}
+  constructor(private noteService: NoteService, private router: Router) {}
 
   protected notes() {
     return this.noteService.getNotes()();
+  }
+
+  navigateToNote(noteId: number): void {
+    this.router.navigate(['/note', noteId]);
   }
 
   showConsole() {
