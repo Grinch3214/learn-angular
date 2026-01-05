@@ -1,7 +1,19 @@
-<div>
-	<h2>Details</h2>
-
+<section class="note">
 	@if (note) {
-	<p>{{note | json}}</p>
+	<div class="container">
+		<div class="note__head">
+			<p class="note__head-id">Note #{{note.id}}</p>
+			<p class="note__head-date">{{ note.createdAt | date:'dd.MM.yyyy HH:mm' }}</p>
+		</div>
+		<h2 class="note__title">{{note.title}}</h2>
+
+		<p class="note__desc">{{note.content}}</p>
+	</div>
 	}
-</div>
+
+	@if (!note) {
+	<div class="container">
+		<h2 class="note__title">Note not found</h2>
+	</div>
+	}
+</section>

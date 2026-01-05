@@ -1,0 +1,36 @@
+@use '../../../scss/mixins' as mix;
+
+.note {
+  padding: 60px 0;
+
+  &:has(.note__head) {
+    .note__title {
+      text-align: left;
+    }
+  }
+
+  &__head {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--second-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__head-date {
+    font-style: italic;
+  }
+
+  &__title {
+    @include mix.title;
+    text-align: center;
+  }
+
+  &__desc {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
