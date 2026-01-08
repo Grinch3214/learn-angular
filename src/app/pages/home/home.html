@@ -15,6 +15,8 @@
 		<div class="home__inner">
 			<h2 class="home__subtitle">Add notes</h2>
 
+			<app-add-note class="home__inner"></app-add-note>
+
 			<form class="home__form">
 				<input class="home__form-input" name="title" type="text" [(ngModel)]="newNote().title" placeholder="Add title">
 				<textarea class="home__form-textarea" name="desc" [(ngModel)]="newNote().content"
