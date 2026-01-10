@@ -1,5 +1,14 @@
-<div class="home__form">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ab dicta, cum, repellendus dolores
-	recusandae esse impedit voluptatum perferendis sequi, eligendi quis ipsam deleniti delectus deserunt quod at.
-	Assumenda.
+<div class="form">
+	<h2 class="form__subtitle">Add notes</h2>
+
+	<form class="form__inner" #noteForm="ngForm" (ngSubmit)="addNote(noteForm)">
+		<label class="form__inner-label">
+			<span>Title</span>
+			<input class="form__inner-input" name="title" type="text" [(ngModel)]="newNote().title" placeholder="Add title">
+		</label>
+		<textarea class="form__inner-textarea" name="desc" [(ngModel)]="newNote().content"
+			placeholder="Add content"></textarea>
+
+		<button class="form__inner-btn">Add note</button>
+	</form>
 </div>
