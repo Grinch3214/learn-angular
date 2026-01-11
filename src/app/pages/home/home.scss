@@ -46,32 +46,4 @@
     font-weight: 700;
     justify-self: end;
   }
-
-  &__subtitle {
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  &__form {
-    display: grid;
-    gap: 8px;
-  }
-
-  &__form-input {
-    @include mix.field;
-  }
-
-  &__form-textarea {
-    @include mix.field(150px);
-  }
-
-  &__form-btn {
-    justify-self: end;
-    max-width: 200px;
-    width: 100%;
-
-    @include mix.button;
-  }
 }

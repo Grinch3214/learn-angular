@@ -1,5 +1,33 @@
-<div class="home__form">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ab dicta, cum, repellendus dolores
-	recusandae esse impedit voluptatum perferendis sequi, eligendi quis ipsam deleniti delectus deserunt quod at.
-	Assumenda.
+<div class="form">
+	<h2 class="form__subtitle">Add notes</h2>
+
+	<form class="form__inner" #noteForm="ngForm" (ngSubmit)="addNote(noteForm)">
+		<label class="form__inner-label">
+			<span>Title</span>
+			<input class="form__inner-input" name="title" type="text" [(ngModel)]="newNote().title" placeholder="Add title"
+				required minlength="3" #titleRef="ngModel">
+			@if (submitted && titleRef.invalid) {
+			@if (titleRef.errors?.['required']) {
+			<span style="color: red;">Field is required</span>
+			} @else if (titleRef.errors?.['minlength']) {
+			<span style="color: red;">Minimum length is 3 characters</span>
+			}
+			}
+		</label>
+
+		<label class="form__inner-label">
+			<span>Title</span>
+			<textarea class="form__inner-textarea" name="content" #contentRef="ngModel" [(ngModel)]="newNote().content"
+				placeholder="Add content" minlength="5" required></textarea>
+			@if (submitted && contentRef.invalid) {
+			@if (contentRef.errors?.['required']) {
+			<span style="color: red;">Field is required</span>
+			} @else if (contentRef.errors?.['minlength']) {
+			<span style="color: red;">Minimum length is 5 characters</span>
+			}
+			}
+		</label>
+
+		<button type="submit" class="form__inner-btn">Add note</button>
+	</form>
 </div>
