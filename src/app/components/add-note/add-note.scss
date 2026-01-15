@@ -13,6 +13,10 @@
     gap: 8px;
   }
 
+  &__inner-error {
+    color: rgb(163, 9, 9);
+  }
+
   &__inner-label {
     display: grid;
     gap: 5px;

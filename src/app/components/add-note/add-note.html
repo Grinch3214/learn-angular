@@ -8,9 +8,9 @@
 				required minlength="3" #titleRef="ngModel">
 			@if (submitted && titleRef.invalid) {
 			@if (titleRef.errors?.['required']) {
-			<span style="color: red;">Field is required</span>
+			<span class="form__inner-error">Field is required</span>
 			} @else if (titleRef.errors?.['minlength']) {
-			<span style="color: red;">Minimum length is 3 characters</span>
+			<span class="form__inner-error">Minimum length is 3 characters</span>
 			}
 			}
 		</label>
@@ -21,9 +21,9 @@
 				placeholder="Add content" minlength="5" required></textarea>
 			@if (submitted && contentRef.invalid) {
 			@if (contentRef.errors?.['required']) {
-			<span style="color: red;">Field is required</span>
+			<span class="form__inner-error">Field is required</span>
 			} @else if (contentRef.errors?.['minlength']) {
-			<span style="color: red;">Minimum length is 5 characters</span>
+			<span class="form__inner-error">Minimum length is 5 characters</span>
 			}
 			}
 		</label>
