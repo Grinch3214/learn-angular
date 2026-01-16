@@ -5,7 +5,7 @@
 		<label class="form__inner-label">
 			<span>Title</span>
 			<input class="form__inner-input" name="title" type="text" [(ngModel)]="newNote().title" placeholder="Add title"
-				required minlength="3" #titleRef="ngModel">
+				required minlength="3" #titleRef="ngModel" />
 			@if (submitted && titleRef.invalid) {
 			@if (titleRef.errors?.['required']) {
 			<span class="form__inner-error">Field is required</span>
