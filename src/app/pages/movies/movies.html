@@ -1,0 +1,18 @@
+<section class="movies">
+	<div class="container">
+		<h2 class="movies__title">Search Movies</h2>
+
+		<input type="text" [(ngModel)]="searchTitle" />
+		<button (click)="search()">Search</button>
+
+		@if (errorMessage()) {
+		<p>{{ errorMessage() }}</p>
+		}
+
+		@for (movie of movies(); track movie.imdbID) {
+		<div>{{ movie.Title }}</div>
+		} @empty {
+		<p>No movies found</p>
+		}
+	</div>
+</section>
