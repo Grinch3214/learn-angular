@@ -1,18 +1,27 @@
 <section class="movies">
 	<div class="container">
-		<h2 class="movies__title">Search Movies</h2>
+		<div class="movies__head">
+			<h2 class="movies__title">Search Movies</h2>
 
-		<input type="text" [(ngModel)]="searchTitle" />
-		<button (click)="search()">Search</button>
+			<div class="movies__form">
+				<input type="text" [(ngModel)]="searchTitle" />
+				<button (click)="search()">Search</button>
+			</div>
+		</div>
 
 		@if (errorMessage()) {
 		<p>{{ errorMessage() }}</p>
 		}
 
 		@for (movie of movies(); track movie.imdbID) {
-		<div>{{ movie.Title }}</div>
+		<div class="movies__list">
+			<article class="movies__item">
+				<img class="movie__item-img" [src]="movie.Poster" [alt]="movie.Title" />
+				<h3 class="movie__item-title">{{ movie.Title }} ({{ movie.Year }})</h3>
+			</article>
+		</div>
 		} @empty {
-		<p>No movies found</p>
+		<p class="movies__empty">No movies found</p>
 		}
 	</div>
 </section>

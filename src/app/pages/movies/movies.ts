@@ -23,6 +23,7 @@ export class Movies {
     this.movieService.searchMovies(title).subscribe({
       next: (response) => {
         if (response.Search) {
+          console.log(response.Search);
           this.movies.set(response.Search);
           this.errorMessage.set('');
         } else {
