@@ -25,8 +25,9 @@
   }
 
   &__title {
-    @include mix.title;
     text-align: center;
+
+    @include mix.title;
   }
 
   &__desc {
