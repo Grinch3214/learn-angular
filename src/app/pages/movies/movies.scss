@@ -38,6 +38,24 @@
     }
   }
 
+  &__error {
+    text-align: right;
+    margin-top: 10px;
+    color: var(--error-color);
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__item-img {
+  }
+
+  &__item-title {
+  }
+
   &__empty {
     text-align: center;
     margin-top: 30px;
