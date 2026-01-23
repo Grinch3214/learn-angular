@@ -18,7 +18,7 @@
 			<article class="movies__item">
 				@if(movie?.Poster) {
 				<img class="movies__item-img" [src]="movie.Poster && movie.Poster !== 'N/A' ? movie.Poster : placeholder"
-					(error)="onImageError($event)" [alt]="movie.Title" width="300" height="400" />
+					(error)="onImageError($event)" [alt]="movie.Title" width="300" height="400" loading="lazy" />
 				}
 				<h3 class="movies__item-title">{{ movie.Title }} ({{ movie.Year }})</h3>
 			</article>
