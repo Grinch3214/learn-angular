@@ -5,6 +5,7 @@
   --white-color: #fff;
   --rounded-md: 8px;
   --accent-color: rgb(193, 193, 247);
+  --error-color: rgb(180, 25, 25);
 }
 
 @mixin base-link($hover: blue, $active: violet, $color: inherit) {

@@ -15,6 +15,7 @@ export class Movies {
   searchTitle = signal('');
   movies = signal<any[]>([]);
   errorMessage = signal('');
+  placeholder = 'img/no-poster.jpg';
 
   search() {
     const title = this.searchTitle();
@@ -36,5 +37,12 @@ export class Movies {
         this.movies.set([]);
       },
     });
+  }
+
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (img.src !== this.placeholder) {
+      img.src = this.placeholder;
+    }
   }
 }

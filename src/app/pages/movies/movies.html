@@ -10,18 +10,19 @@
 		</div>
 
 		@if (errorMessage()) {
-		<p>{{ errorMessage() }}</p>
+		<p class="movies__error">{{ errorMessage() }}</p>
 		}
 
-		@for (movie of movies(); track movie.imdbID) {
 		<div class="movies__list">
+			@for (movie of movies(); track movie.imdbID) {
 			<article class="movies__item">
-				<img class="movie__item-img" [src]="movie.Poster" [alt]="movie.Title" />
-				<h3 class="movie__item-title">{{ movie.Title }} ({{ movie.Year }})</h3>
+				@if(movie?.Poster) {
+				<img class="movies__item-img" [src]="movie.Poster && movie.Poster !== 'N/A' ? movie.Poster : placeholder"
+					(error)="onImageError($event)" [alt]="movie.Title" width="300" height="400" loading="lazy" />
+				}
+				<h3 class="movies__item-title">{{ movie.Title }} ({{ movie.Year }})</h3>
 			</article>
+			}
 		</div>
-		} @empty {
-		<p class="movies__empty">No movies found</p>
-		}
 	</div>
 </section>

@@ -1,4 +1,6 @@
 .movies {
+  --title-height-card: 80px;
+
   padding: 60px 0;
 
   &__head {
@@ -36,6 +38,50 @@
       color: var(--accent-color);
       background: var(--second-color);
     }
+  }
+
+  &__error {
+    text-align: right;
+    margin-top: 10px;
+    color: var(--error-color);
+  }
+
+  &__list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 40px 0 0;
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      --title-height-card: 100%;
+    }
+  }
+
+  &__item-img {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+
+  &__item-title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: var(--white-color);
+    padding: 10px 5px;
+    background: rgb(0 0 0 / 0.6);
+    min-height: var(--title-height-card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.25s linear;
   }
 
   &__empty {
