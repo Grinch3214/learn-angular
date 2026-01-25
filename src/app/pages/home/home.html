@@ -6,7 +6,7 @@
 			@for (note of notes(); track note.id) {
 			<li (click)="navigateToNote(note.id)" class="home__item">
 				<h3 class="home__item-title">{{ note.title }}</h3>
-				<p>{{ note.content.length > 50 ? (note.content | slice:0:50) + '...' : note.content }}</p>
+				<p>{{ note.content | shortText }}</p>
 				<span class="home__item-at">{{ note.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
 			</li>
 			}
