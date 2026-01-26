@@ -5,15 +5,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppAddNote } from '../../components/add-note/add-note';
+import { ShortTextPipe } from '../../pipes/short-text-pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FormsModule, AppAddNote],
+  imports: [CommonModule, FormsModule, AppAddNote, ShortTextPipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
-  constructor(private noteService: NoteService, private router: Router) {}
+  constructor(
+    private noteService: NoteService,
+    private router: Router,
+  ) {}
 
   protected notes() {
     return this.noteService.getNotes()();
