@@ -4,7 +4,7 @@
 			<h2 class="movies__title">Search Movies</h2>
 
 			<div class="movies__form">
-				<input type="text" [(ngModel)]="searchTitle" />
+				<input type="text" [(ngModel)]="searchTitle" (keyup.enter)="search()" />
 				<button (click)="search()">Search</button>
 			</div>
 		</div>
